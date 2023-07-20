@@ -14,14 +14,13 @@ export const Menu = ({
         <>
             <ul className="Menu-list">
                 {Values[selectedLang].map((val) => (
-                    <li
-                        key={val.id}
-                        className={
-                            activeMenuId === val.id
-                                ? "activeMenu"
-                                : "inactiveMenu"
-                        }>
+                    <li key={val.id}>
                         <Link
+                            className={
+                                activeMenuId === val.id
+                                    ? "activeMenu"
+                                    : "inactiveMenu"
+                            }
                             onClick={() => {
                                 setActiveMenuId(val.id);
                             }}

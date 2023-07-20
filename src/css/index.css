@@ -109,20 +109,20 @@ h1 {
   color: var(--white-color);
   font-weight: bold;
   font-size: var(--font-size);
-  margin-right: 20px;
-  padding: 5px;
+  margin-right: 10px;
   border-radius: var(--border-radius-small);
 }
 .Menu-list li a {
   color: inherit;
+  padding: 5px;
 }
-.Menu-list li:last-child {
-  margin-right: 0px;
-}
-.Menu-list li:hover {
+.Menu-list li a:hover {
   border-radius: var(--border-radius-small);
   background-color: var(--white-color);
   color: var(--black-color);
+}
+.Menu-list li:last-child {
+  margin-right: 0px;
 }
 
 .Localization-buttons {

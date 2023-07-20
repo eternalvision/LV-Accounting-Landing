@@ -38,20 +38,21 @@
         color: var(--white-color);
         a {
             color: inherit;
+            &:hover {
+                border-radius: var(--border-radius-small);
+                background-color: var(--white-color);
+                color: var(--black-color);
+            }
+            padding: 5px;
         }
+
         font-weight: bold;
         font-size: var(--font-size);
-        margin-right: 20px;
-        padding: 5px;
+        margin-right: 10px;
         border-radius: var(--border-radius-small);
 
         &:last-child {
             margin-right: 0px;
-        }
-        &:hover {
-            border-radius: var(--border-radius-small);
-            background-color: var(--white-color);
-            color: var(--black-color);
         }
     }
 }
