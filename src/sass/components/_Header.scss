@@ -1,0 +1,92 @@
+.Header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--black-color);
+
+    nav {
+        padding: 30px 80px;
+    }
+}
+
+.Header-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header-list__menu {
+    align-items: center;
+    display: flex;
+}
+
+.Logo {
+    font-size: var(--font-size);
+    color: var(--white-color);
+    background-color: var(--blue-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: var(--border-radius-small);
+    padding: 5px 10px;
+}
+
+.Menu-list {
+    display: flex;
+    li {
+        color: var(--white-color);
+        a {
+            color: inherit;
+        }
+        font-weight: bold;
+        font-size: var(--font-size);
+        margin-right: 20px;
+        padding: 5px;
+        border-radius: var(--border-radius-small);
+
+        &:last-child {
+            margin-right: 0px;
+        }
+        &:hover {
+            border-radius: var(--border-radius-small);
+            background-color: var(--white-color);
+            color: var(--black-color);
+        }
+    }
+}
+
+.Localization-buttons {
+    background-color: var(--white-color);
+    margin-left: 50px;
+    border-radius: var(--border-radius-small);
+    padding: 5px;
+    button {
+        padding: 10px;
+        background-color: var(--transparent);
+        font-size: 20px;
+        margin-right: 5px;
+        cursor: pointer;
+        border-radius: var(--border-radius-small);
+        &:last-child {
+            margin-right: 0px;
+        }
+        &:hover {
+            background-color: var(--black-color);
+            color: var(--white-color);
+            border-radius: var(--border-radius-small);
+        }
+    }
+}
+
+.activeLanguage {
+    color: var(--white-color);
+    border-radius: var(--border-radius-small);
+    background-color: var(--black-color) !important;
+}
+
+.activeMenu {
+    border-radius: var(--border-radius-small);
+    background-color: var(--white-color);
+    color: var(--black-color) !important;
+}
