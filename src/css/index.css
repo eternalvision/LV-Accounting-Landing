@@ -43,18 +43,50 @@ h1 {
   padding: 0;
 }
 
+.PreLoader {
+  width: 500px;
+  height: 500px;
+  background-color: #000;
+}
+
 :root {
-  --font-size: 22px;
+  --font-size: 20px;
   --black-color: #101113;
   --black-transparent: #101113b2;
   --white-color: #ebebeb;
   --white-transparent: #ebebebb2;
   --blue-color: blue;
+  --blue-shadow: 1px 1px 16px 1px rgba(0, 0, 255, 0.7);
   --transparent-color: transparent;
+  --transform-scale: scale(1.05);
+  --border-radius-big: 28px;
   --border-radius: 18px;
   --border-radius-small: 8px;
-  --blur-big: blur(100px);
+  --blur-big: blur(20px);
   --blur-small: blur(8px);
+  --site-main-indent-r: 2%;
+  --site-main-indent-l: 2%;
+  --box-shadow-block: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.activeLanguage {
+  cursor: default !important;
+  color: var(--white-color);
+  border-radius: var(--border-radius-small);
+  background-color: var(--blue-color) !important;
+  pointer-events: none;
+}
+
+.activeMenu {
+  cursor: default !important;
+  border-radius: var(--border-radius-small);
+  background-color: var(--blue-color);
+  color: var(--white-color) !important;
+  pointer-events: none;
+}
+.activeMenu:hover {
+  background-color: var(--blue-color) !important;
+  color: var(--white-color) !important;
 }
 
 .Header {
@@ -66,7 +98,7 @@ h1 {
   background-color: var(--black-color);
 }
 .Header nav {
-  padding: 30px 80px;
+  padding: 20px var(--site-main-indent-r) 20px var(--site-main-indent-l);
 }
 
 .Header-list {
@@ -106,14 +138,16 @@ h1 {
   display: flex;
 }
 .Menu-list li {
-  color: var(--white-color);
-  font-weight: bold;
-  font-size: var(--font-size);
   margin-right: 10px;
-  border-radius: var(--border-radius-small);
+}
+.Menu-list li:last-child {
+  margin-right: 0px;
 }
 .Menu-list li a {
-  color: inherit;
+  font-weight: bold;
+  font-size: var(--font-size);
+  border-radius: var(--border-radius-small);
+  color: var(--white-color);
   padding: 5px;
 }
 .Menu-list li a:hover {
@@ -121,13 +155,10 @@ h1 {
   background-color: var(--white-color);
   color: var(--black-color);
 }
-.Menu-list li:last-child {
-  margin-right: 0px;
-}
 
 .Localization-buttons {
   background-color: var(--white-color);
-  margin-left: 50px;
+  margin-left: 40px;
   border-radius: var(--border-radius-small);
   padding: 5px;
 }
@@ -136,6 +167,7 @@ h1 {
   background-color: var(--transparent);
   font-size: 20px;
   margin-right: 5px;
+  font-weight: bold;
   cursor: pointer;
   border-radius: var(--border-radius-small);
 }
@@ -148,16 +180,8 @@ h1 {
   border-radius: var(--border-radius-small);
 }
 
-.activeLanguage {
-  color: var(--white-color);
-  border-radius: var(--border-radius-small);
-  background-color: var(--black-color) !important;
-}
-
-.activeMenu {
-  border-radius: var(--border-radius-small);
-  background-color: var(--white-color);
-  color: var(--black-color) !important;
+.Introduction-section {
+  height: 100%;
 }
 
 .Introduction-list li:first-child {
@@ -183,7 +207,13 @@ h1 {
 }
 
 .Introduction-list__title {
-  margin: 7% 2.5%;
+  height: 80vh;
+  margin: 140px var(--site-main-indent-r) 0% var(--site-main-indent-l);
+  padding: 50px;
+  background-color: var(--black-color);
+  -webkit-box-shadow: var(--box-shadow-block);
+          box-shadow: var(--box-shadow-block);
+  border-radius: var(--border-radius-big);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,16 +221,15 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.Introduction-list__title li section {
-  color: var(--black-color);
-  padding: 20px;
+.Introduction-list__title li:first-child section {
+  color: var(--white-color);
   border-radius: var(--border-radius);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -209,41 +238,52 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.Introduction-list__title li:first-child section h1 {
+  text-align: center;
+  font-size: 350%;
+  line-height: 1.15;
+}
+.Introduction-list__title li:first-child section .Introduction-buttons {
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.Introduction-list__title li section h1 {
-  font-size: 950%;
-}
-.Introduction-list__title li section div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 3% 0px;
-}
-.Introduction-list__title li section div a {
+.Introduction-list__title li:first-child section .Introduction-buttons a {
   cursor: pointer;
   border-radius: var(--border-radius-small);
   padding: 15px 20px;
   font-weight: bold;
-  background-color: var(--black-color);
-  color: var(--white-color);
+  background-color: var(--white-color);
+  color: var(--black-color);
   -webkit-backdrop-filter: var(--blur);
           backdrop-filter: var(--blur);
-  font-size: 30px;
+  font-size: 26px;
 }
-.Introduction-list__title li section div a:first-child {
-  margin-right: 25px;
-}
-.Introduction-list__title li section div a:last-child {
-  margin-left: 25px;
-}
-.Introduction-list__title li section div a:hover {
+.Introduction-list__title li:first-child section .Introduction-buttons a:hover {
   background-color: var(--blue-color);
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  color: var(--white-color);
+  -webkit-transform: var(--transform-scale);
+          transform: var(--transform-scale);
+  -webkit-box-shadow: var(--blue-shadow);
+          box-shadow: var(--blue-shadow);
 }
-.Introduction-list__title li section div a:last-child::after {
+.Introduction-list__title li:first-child section .Introduction-buttons a:first-child {
+  margin-right: 10px;
+}
+.Introduction-list__title li:first-child section .Introduction-buttons a:last-child {
+  margin-left: 10px;
+}
+.Introduction-list__title li:first-child section .Introduction-buttons a:last-child::after {
   content: " >";
 }

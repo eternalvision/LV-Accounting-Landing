@@ -7,7 +7,7 @@
     background-color: var(--black-color);
 
     nav {
-        padding: 30px 80px;
+        padding: 20px var(--site-main-indent-r) 20px var(--site-main-indent-l);
     }
 }
 
@@ -35,31 +35,19 @@
 .Menu-list {
     display: flex;
     li {
-        color: var(--white-color);
-        a {
-            color: inherit;
-            &:hover {
-                border-radius: var(--border-radius-small);
-                background-color: var(--white-color);
-                color: var(--black-color);
-            }
-            padding: 5px;
-        }
-
-        font-weight: bold;
-        font-size: var(--font-size);
         margin-right: 10px;
-        border-radius: var(--border-radius-small);
-
         &:last-child {
             margin-right: 0px;
+        }
+        a {
+            @include Button;
         }
     }
 }
 
 .Localization-buttons {
     background-color: var(--white-color);
-    margin-left: 50px;
+    margin-left: 40px;
     border-radius: var(--border-radius-small);
     padding: 5px;
     button {
@@ -67,6 +55,7 @@
         background-color: var(--transparent);
         font-size: 20px;
         margin-right: 5px;
+        font-weight: bold;
         cursor: pointer;
         border-radius: var(--border-radius-small);
         &:last-child {
@@ -78,16 +67,4 @@
             border-radius: var(--border-radius-small);
         }
     }
-}
-
-.activeLanguage {
-    color: var(--white-color);
-    border-radius: var(--border-radius-small);
-    background-color: var(--black-color) !important;
-}
-
-.activeMenu {
-    border-radius: var(--border-radius-small);
-    background-color: var(--white-color);
-    color: var(--black-color) !important;
 }

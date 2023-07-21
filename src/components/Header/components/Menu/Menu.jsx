@@ -19,7 +19,7 @@ export const Menu = ({
                             className={
                                 activeMenuId === val.id
                                     ? "activeMenu"
-                                    : "inactiveMenu"
+                                    : "emptyClass"
                             }
                             onClick={() => {
                                 setActiveMenuId(val.id);

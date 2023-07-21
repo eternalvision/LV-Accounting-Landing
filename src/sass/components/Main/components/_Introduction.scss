@@ -1,3 +1,7 @@
+.Introduction-section {
+    height: 100%;
+}
+
 .Introduction-list {
     li {
         &:first-child {
@@ -23,47 +27,45 @@
 }
 
 .Introduction-list__title {
-    margin: 7% 2.5%;
+    height: 80vh;
+    margin: 140px var(--site-main-indent-r) 0% var(--site-main-indent-l);
+    padding: 50px;
+    background-color: var(--black-color);
+    box-shadow: var(--box-shadow-block);
+    border-radius: var(--border-radius-big);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     li {
-        section {
-            color: var(--black-color);
-            padding: 20px;
-            border-radius: var(--border-radius);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            h1 {
-                font-size: 950%;
-            }
-            div {
+        &:first-child {
+            section {
+                color: var(--white-color);
+                border-radius: var(--border-radius);
                 display: flex;
-                margin: 3% 0px;
-                a {
-                    cursor: pointer;
-                    border-radius: var(--border-radius-small);
-                    padding: 15px 20px;
-                    font-weight: bold;
-                    background-color: var(--black-color);
-                    color: var(--white-color);
-                    backdrop-filter: var(--blur);
-                    font-size: 30px;
-                    &:first-child {
-                        margin-right: 25px;
-                    }
-                    &:last-child {
-                        margin-left: 25px;
-                    }
-                    &:hover {
-                        background-color: var(--blue-color);
-                        transform: scale(1.1);
-                    }
-
-                    &:last-child::after {
-                        content: " >";
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                h1 {
+                    text-align: center;
+                    font-size: 350%;
+                    line-height: 1.15;
+                }
+                .Introduction-buttons {
+                    margin-top: 2%;
+                    display: flex;
+                    justify-content: center;
+                    a {
+                        @include BigButton;
+                        &:first-child {
+                            margin-right: 10px;
+                        }
+                        &:last-child {
+                            margin-left: 10px;
+                        }
+                        &:last-child::after {
+                            content: " >";
+                        }
                     }
                 }
             }

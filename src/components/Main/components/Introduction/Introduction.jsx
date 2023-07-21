@@ -24,7 +24,7 @@ export const Introduction = ({
                                         <span key={val.id}>{val.text}</span>
                                     ))}
                                 </h1>
-                                <div>
+                                <div className="Introduction-buttons">
                                     {Values[selectedLang].map((val) => (
                                         <Link
                                             onClick={() => {
@@ -32,7 +32,7 @@ export const Introduction = ({
                                             }}
                                             key={val.id}
                                             to={val.linkTo}>
-                                            {val.text}
+                                            <span>{val.text}</span>
                                         </Link>
                                     ))}
                                 </div>

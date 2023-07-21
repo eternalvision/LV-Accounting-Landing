@@ -1,5 +1,5 @@
 :root {
-    --font-size: 22px;
+    --font-size: 20px;
 
     --black-color: #101113;
     --black-transparent: #101113b2;
@@ -8,11 +8,71 @@
     --white-transparent: #ebebebb2;
 
     --blue-color: blue;
+    --blue-shadow: 1px 1px 16px 1px rgba(0, 0, 255, 0.7);
 
     --transparent-color: transparent;
+
+    --transform-scale: scale(1.05);
+
+    --border-radius-big: 28px;
     --border-radius: 18px;
     --border-radius-small: 8px;
 
-    --blur-big: blur(100px);
+    --blur-big: blur(20px);
     --blur-small: blur(8px);
+
+    --site-main-indent-r: 2%;
+    --site-main-indent-l: 2%;
+
+    --box-shadow-block: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+@mixin Button {
+    font-weight: bold;
+    font-size: var(--font-size);
+    border-radius: var(--border-radius-small);
+    color: var(--white-color);
+    padding: 5px;
+    &:hover {
+        border-radius: var(--border-radius-small);
+        background-color: var(--white-color);
+        color: var(--black-color);
+    }
+}
+
+@mixin BigButton {
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+    padding: 15px 20px;
+    font-weight: bold;
+    background-color: var(--white-color);
+    color: var(--black-color);
+    backdrop-filter: var(--blur);
+    font-size: 26px;
+    &:hover {
+        background-color: var(--blue-color);
+        color: var(--white-color);
+        transform: var(--transform-scale);
+        box-shadow: var(--blue-shadow);
+    }
+}
+
+.activeLanguage {
+    cursor: default !important;
+    color: var(--white-color);
+    border-radius: var(--border-radius-small);
+    background-color: var(--blue-color) !important;
+    pointer-events: none;
+}
+
+.activeMenu {
+    cursor: default !important;
+    border-radius: var(--border-radius-small);
+    background-color: var(--blue-color);
+    color: var(--white-color) !important;
+    pointer-events: none;
+    &:hover {
+        background-color: var(--blue-color) !important;
+        color: var(--white-color) !important;
+    }
 }
